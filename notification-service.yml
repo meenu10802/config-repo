@@ -21,6 +21,14 @@ spring:
     port: 5672
     username: guest
     password: guest
+    listener:
+      simple:
+        retry:
+          enabled: true
+          initial-interval: 2000
+          max-attempts: 3
+          max-interval: 10000
+          multiplier: 2
 
   mail:
     host: smtp.gmail.com
